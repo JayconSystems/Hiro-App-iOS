@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-ng-FDt">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3Mh-ng-FDt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9HC-D5-nFx"/>
+                <constraint firstAttribute="centerX" secondItem="3Mh-ng-FDt" secondAttribute="centerX" id="AW2-HA-LdP"/>
+                <constraint firstAttribute="trailing" secondItem="3Mh-ng-FDt" secondAttribute="trailing" id="aat-tH-oDR"/>
+                <constraint firstItem="3Mh-ng-FDt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iIu-wb-bSh"/>
+                <constraint firstAttribute="centerY" secondItem="3Mh-ng-FDt" secondAttribute="centerY" id="oRi-Wa-xkR"/>
+                <constraint firstAttribute="bottom" secondItem="3Mh-ng-FDt" secondAttribute="bottom" id="vKi-mo-iRg"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9HC-D5-nFx"/>
+                    <exclude reference="AW2-HA-LdP"/>
+                    <exclude reference="aat-tH-oDR"/>
+                    <exclude reference="iIu-wb-bSh"/>
+                    <exclude reference="oRi-Wa-xkR"/>
+                    <exclude reference="vKi-mo-iRg"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="9HC-D5-nFx"/>
+                    <include reference="AW2-HA-LdP"/>
+                    <include reference="aat-tH-oDR"/>
+                    <include reference="iIu-wb-bSh"/>
+                    <include reference="oRi-Wa-xkR"/>
+                    <include reference="vKi-mo-iRg"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="454" y="416"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="SplashScreen" width="320" height="568"/>
+    </resources>
+</document>

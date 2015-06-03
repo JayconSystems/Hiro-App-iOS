@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CAB57EF2-386B-431F-90DA-0AF942A7254F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hiro</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E2210B7254D7386F2067BDED21DFB03C9ED64305</key>
+		<string>https://xp-dev.com/git/HeroAppIOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HeroApp/Hiro.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E2210B7254D7386F2067BDED21DFB03C9ED64305</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://xp-dev.com/git/HeroAppIOS</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E2210B7254D7386F2067BDED21DFB03C9ED64305</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E2210B7254D7386F2067BDED21DFB03C9ED64305</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HeroAppIOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

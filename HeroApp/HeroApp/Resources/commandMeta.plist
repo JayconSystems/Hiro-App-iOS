@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>playAlert</key>
+	<dict>
+		<key>label</key>
+		<string>Play Alert</string>
+		<key>userPINIsRequired</key>
+		<false/>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>alertLevel</string>
+				<key>operation</key>
+				<string>write</string>
+			</dict>
+		</array>
+	</dict>
+	<key>stopAlert</key>
+	<dict>
+		<key>label</key>
+		<string>Stop Alert</string>
+		<key>userPINIsRequired</key>
+		<false/>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>alertLevel</string>
+				<key>operation</key>
+				<string>write</string>
+				<key>value</key>
+				<real>0</real>
+			</dict>
+		</array>
+	</dict>
+	<key>linkLoss</key>
+	<dict>
+		<key>label</key>
+		<string>Link Loss</string>
+		<key>userPINIsRequired</key>
+		<false/>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>linkLossLevel</string>
+				<key>operation</key>
+				<string>write</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
