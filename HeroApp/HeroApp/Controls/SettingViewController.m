@@ -177,11 +177,13 @@
     [self performSegueWithIdentifier:@"segueringtone" sender:self];
 }
 
+// Changed viewWillAppear for viewDidAppear to fix button status issue
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   [self updateButtonRingtoneButtons];
   [self updateButtonsActiveStatus];
 }
+
 
 -(void)updateButtonsActiveStatus {
   bool alertIsEnabled = [self.actor.state[kPhoneSoundAlertISEnable] boolValue];
