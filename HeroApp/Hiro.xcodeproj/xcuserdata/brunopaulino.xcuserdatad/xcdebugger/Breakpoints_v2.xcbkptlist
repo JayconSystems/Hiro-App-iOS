@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HeroApp/Controls/SettingViewController.m"
-            timestampString = "456016005.899118"
+            timestampString = "456018211.500964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "-updateUI"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-updateButtonRingtoneButtons"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
