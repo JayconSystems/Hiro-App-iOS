@@ -137,6 +137,7 @@ static NSInteger selectedIndexValue;;
     [cell initializeCell:actor];
     
     cell.txtFieldName.text =  actor.state[kDeviceName];
+    NSLog(@"========================================= %@", actor.state[kDeviceName]);
     cell.txtFieldName.delegate = (id)self;
     cell.txtFieldName.tag = indexPath.row;
     cell.btnNotification.tag = indexPath.row;
@@ -237,9 +238,19 @@ static NSInteger selectedIndexValue;;
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     HeroActor *actor = AppDelegate_.deviceActors[textField.tag];
-    if([textField.text length]!=0){
-        actor.state[kDeviceName] = textField.text;
+    NSString *actorName = [textField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+
+    if([actorName length] != 0){
+      actor.state[kDeviceName] = actorName;
+      textField.text = actorName;
     }
+    else {
+      actor.state[kDeviceName] = @"My Hiro";
+      textField.text = @"My Hiro";
+    }
+  
+  [AppDelegate_ storeDevicesState];
+  
     [textField resignFirstResponder];
 }
 
@@ -266,8 +277,6 @@ static NSInteger selectedIndexValue;;
     return true;
   }
 }
-
-
 
 
 
