@@ -145,6 +145,8 @@
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     alert.delegate = self;
+    UITextField *txtLogicalName = [alert textFieldAtIndex:0];
+    txtLogicalName.delegate = self;
     alert.tag = indexPath.row;
     [alert show];
 
@@ -199,7 +201,9 @@
 {
     if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save"]) {
         UITextField *txtLogicalName = [alertView textFieldAtIndex:0];
-        if(txtLogicalName.text.length!=0){
+      NSString *hiroName = [txtLogicalName.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+      
+        if(hiroName.length != 0){
             AppDelegate_.deviceLogicalName = txtLogicalName.text;
         }
         else{
@@ -224,5 +228,16 @@
 - (IBAction)actionCancel:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(bool) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+  NSUInteger length = [textField.text length] + [string length];
+  if (length > 17) {
+    return false;
+  }
+  else {
+    return true;
+  }
 }
 @end

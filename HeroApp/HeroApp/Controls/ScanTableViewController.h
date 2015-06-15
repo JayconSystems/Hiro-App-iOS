@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScanTableViewController : UITableViewController <UIAlertViewDelegate>
+@interface ScanTableViewController : UITableViewController <UIAlertViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnScan;
 
 @property (strong,nonatomic) NSMutableArray *peripherals;
