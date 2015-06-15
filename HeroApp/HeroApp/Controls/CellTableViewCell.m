@@ -44,7 +44,6 @@
     [self refreshTimer];
     
     self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshView) userInfo:nil repeats:YES];
-    
 }
 
 - (IBAction)actionPlaySound:(id)sender {

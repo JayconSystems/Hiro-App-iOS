@@ -883,9 +883,6 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="23"/>
                                                             <textInputTraits key="textInputTraits"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="2uM-yd-mcj" id="1k2-jJ-7P0"/>
-                                                            </connections>
                                                         </textField>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Battery_N4" translatesAutoresizingMaskIntoConstraints="NO" id="x2p-P3-8qw">
                                                             <rect key="frame" x="253" y="20" width="26" height="26"/>
