@@ -23,7 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.actor.state[@"name"];
+    //Hiro's name in location screen
+    self.title = self.actor.state[kDeviceName];
     self.mapView.layer.cornerRadius = 3.0f;
     self.mapView.showsUserLocation = NO;
     self.mapView.delegate = self;
