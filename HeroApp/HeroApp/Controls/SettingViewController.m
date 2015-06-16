@@ -41,22 +41,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    if([ReadValue(SOUND_FIND_PHONE_THUR_HIRO) isEqualToString:@"HiroTone1"]){
-        [self.btnFindPhoneAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
-    }
-    else{
-        [self.btnFindPhoneAlert setTitle:[NSString stringWithFormat:@"%@ >",ReadValue(SOUND_FIND_PHONE_THUR_HIRO)] forState:UIControlStateNormal];
-    }
-    
-    if([self.actor.state[SOUND_PHONE_SOUND_ALERT] isEqualToString:@"HiroTone2"]){
-        [self.btnSoundAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
-    }
-    else{
-         [self.btnSoundAlert setTitle:[NSString stringWithFormat:@"%@ >",self.actor.state[SOUND_PHONE_SOUND_ALERT]] forState:UIControlStateNormal];
-    }
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -192,6 +176,7 @@
     [self performSegueWithIdentifier:@"segueringtone" sender:self];
 }
 
+// Changed viewWillAppear for viewDidAppear to fix button status issue()
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self updateButtonRingtoneButtons];
