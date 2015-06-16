@@ -118,18 +118,22 @@
 - (IBAction)PhoneSoundAlert:(UIButton *)sender {
     if (sender.isSelected) {
         self.btnHiroSoundAlert.selected = false;
+        self.btnSoundAlert.enabled = false;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:FALSE];
     }else{
         self.btnHiroSoundAlert.selected = true;
+        self.btnSoundAlert.enabled = true;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:TRUE];
     }
 }
 - (IBAction)HiroBeepAlert:(UIButton *)sender {
     if (sender.isSelected) {
         self.btnBeepAlert.selected = false;
-        self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:FALSE];;
+        self.segHiroBeepAlert.enabled = false;
+        self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:FALSE];
     }else{
         self.btnBeepAlert.selected = true;
+        self.segHiroBeepAlert.enabled = true;
         self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:TRUE];
     }
     [self checkAndUpdateLinkLoss];
@@ -186,5 +190,40 @@
 - (IBAction)actionPhoneThroughFeature:(id)sender {
     index = 2;
     [self performSegueWithIdentifier:@"segueringtone" sender:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self updateButtonRingtoneButtons];
+    [self updateButtonsActiveStatus];
+}
+
+-(void)updateButtonsActiveStatus {
+    bool alertIsEnabled = [self.actor.state[kPhoneSoundAlertISEnable] boolValue];
+    bool beepIsEnabled = [self.actor.state[kHeroAlertIsEnable] boolValue];
+
+    self.btnHiroSoundAlert.selected = alertIsEnabled;
+    self.btnSoundAlert.enabled = alertIsEnabled;
+    self.btnBeepAlert.selected = beepIsEnabled;
+    self.segHiroBeepAlert.enabled = beepIsEnabled;
+    
+}
+
+-(void)updateButtonRingtoneButtons {
+    
+    if([ReadValue(SOUND_FIND_PHONE_THUR_HIRO) isEqualToString:@"HiroTone1"]){
+        [self.btnFindPhoneAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
+    }
+    else{
+        [self.btnFindPhoneAlert setTitle:[NSString stringWithFormat:@"%@ >",ReadValue(SOUND_FIND_PHONE_THUR_HIRO)] forState:UIControlStateNormal];
+    }
+    
+    if([self.actor.state[SOUND_PHONE_SOUND_ALERT] isEqualToString:@"HiroTone2"]){
+        [self.btnSoundAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
+    }
+    else{
+        [self.btnSoundAlert setTitle:[NSString stringWithFormat:@"%@ >", self.actor.state[SOUND_PHONE_SOUND_ALERT]] forState:UIControlStateNormal];
+    }
+    
 }
 @end
