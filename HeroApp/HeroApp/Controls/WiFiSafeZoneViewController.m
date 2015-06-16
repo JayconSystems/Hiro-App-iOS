@@ -18,7 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.topItem.title = @"";
+    self.title = @"Wi-Fi Safe Zones";
+//    self.navigationController.navigationBar.topItem.title = @"";
+
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar

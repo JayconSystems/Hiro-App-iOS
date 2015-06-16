@@ -22,6 +22,9 @@
     [super viewDidLoad];
 
     self.title = @"Settings";
+//    self.navigationController.navigationBar.topItem.title = @"";
+
+    
     self.innerView.layer.cornerRadius = 3.0f;
     self.scrollView.layer.cornerRadius = 3.0f;
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
