@@ -176,7 +176,7 @@
     [self performSegueWithIdentifier:@"segueringtone" sender:self];
 }
 
-// Changed viewWillAppear for viewDidAppear to fix button status issue()
+// Changed viewWillAppear for viewDidAppear to fix button status issue(swipe)
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self updateButtonRingtoneButtons];
