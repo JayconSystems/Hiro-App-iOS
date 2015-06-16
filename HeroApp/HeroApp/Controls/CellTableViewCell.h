@@ -27,6 +27,6 @@
 - (IBAction)actionPlaySound:(id)sender;
 @end
 
-@interface CellTableViewCell : UITableViewCell
+@interface CellTableViewCell : UITableViewCell <UITextFieldDelegate>
 
 @end
