@@ -39,6 +39,7 @@
                   forControlEvents:UIControlEventValueChanged];
     [self startScanning];
     
+    
 
 }
 
