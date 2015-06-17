@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     self.title = @"Settings";
-//    self.navigationController.navigationBar.topItem.title = @"";
+    self.navigationController.navigationBar.topItem.title = @"";
 
     
     self.innerView.layer.cornerRadius = 3.0f;
