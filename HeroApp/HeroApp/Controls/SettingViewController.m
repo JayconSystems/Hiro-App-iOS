@@ -101,10 +101,12 @@
 }
 - (IBAction)PhoneSoundAlert:(UIButton *)sender {
     if (sender.isSelected) {
+        [self.btnSoundAlert setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
         self.btnHiroSoundAlert.selected = false;
         self.btnSoundAlert.enabled = false;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:FALSE];
     }else{
+        [self.btnSoundAlert setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.btnHiroSoundAlert.selected = true;
         self.btnSoundAlert.enabled = true;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:TRUE];
@@ -196,6 +198,7 @@
 
 -(void)updateButtonRingtoneButtons {
     
+    
     if([ReadValue(SOUND_FIND_PHONE_THUR_HIRO) isEqualToString:@"HiroTone1"]){
         [self.btnFindPhoneAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
     }
@@ -209,6 +212,7 @@
     else{
         [self.btnSoundAlert setTitle:[NSString stringWithFormat:@"%@ >", self.actor.state[SOUND_PHONE_SOUND_ALERT]] forState:UIControlStateNormal];
     }
+  
     
 }
 @end
