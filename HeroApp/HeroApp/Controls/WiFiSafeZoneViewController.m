@@ -18,8 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.topItem.title = @"";
-    self.title = @"Wi-fi";
+    self.title = @"Wi-Fi Safe Zones";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
@@ -41,9 +40,6 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    self.title = @"Wi-fi";
-}
 
 - (void)appDidBecomeActive:(NSNotification *)note {
     [self checkIfNetworkConnected];
