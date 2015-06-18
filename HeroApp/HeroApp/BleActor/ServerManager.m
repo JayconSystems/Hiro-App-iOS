@@ -8,6 +8,8 @@
 
 #import "ServerManager.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <CoreTelephony/CTCallCenter.h>
+#import <CoreTelephony/CTCall.h>
 
 @implementation ServerManager
 {
@@ -176,8 +178,21 @@ static ServerManager* sharedServerManager;
     NSLog(@"Did add peripheral service, with error %@.", error);
 }
 
+-(bool)isOnPhoneCall {
+    
+    //Returns TRUE/YES if the user is currently on a phone call
+    CTCallCenter *callCenter = [[CTCallCenter alloc] init];
+    for (CTCall *call in callCenter.currentCalls)  {
+        if (call.callState == CTCallStateConnected) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 - (void) peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
 {
+    
     static UILocalNotification *alarm;
     if (alarm != nil)
     {
@@ -192,8 +207,9 @@ static ServerManager* sharedServerManager;
             NSUInteger alertValue = *(NSUInteger*) [[request value] bytes];
 //            NSUInteger requestOffset = request.offset;
 
-            if (alertValue > 0)
+            if (alertValue > 0 && ![self isOnPhoneCall])
             {
+                
                 [self startPlayingAlarmSound];
 
 //                self.playTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(stopPlayingAlarmSound) userInfo:nil repeats:NO];
@@ -201,12 +217,16 @@ static ServerManager* sharedServerManager;
                 alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
                 alarm.alertAction = @"View";
 
-                
+ 
                 [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
             else
             {
                 [self stopPlayingAlarmSound];
+                alarm = [[UILocalNotification alloc] init];
+                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
+                alarm.alertAction = @"View";
+                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
         }
     }
