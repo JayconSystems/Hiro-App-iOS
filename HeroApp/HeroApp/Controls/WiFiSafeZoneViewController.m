@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBar.topItem.title = @"";
+    self.title = @"Wi-fi";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
@@ -38,8 +39,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     
     
-    
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    self.title = @"Wi-fi";
 }
 
 - (void)appDidBecomeActive:(NSNotification *)note {

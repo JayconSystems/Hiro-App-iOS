@@ -28,6 +28,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    self.title = @"Settings Info";
+
+}
 /*
 #pragma mark - Navigation
 

@@ -130,6 +130,7 @@
         if(yes){
             
             if (self.actor) {
+
                 [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
                 
                 self.actor.peripheralActor.peripheral.delegate = nil;
@@ -186,8 +187,12 @@
 }
 
 -(void)updateButtonsActiveStatus {
+    
     bool alertIsEnabled = [self.actor.state[kPhoneSoundAlertISEnable] boolValue];
     bool beepIsEnabled = [self.actor.state[kHeroAlertIsEnable] boolValue];
+    if (!alertIsEnabled) {
+        [self.btnSoundAlert setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
+    }
 
     self.btnHiroSoundAlert.selected = alertIsEnabled;
     self.btnSoundAlert.enabled = alertIsEnabled;
