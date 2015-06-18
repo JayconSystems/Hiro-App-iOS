@@ -217,7 +217,6 @@ static ServerManager* sharedServerManager;
                 alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
                 alarm.alertAction = @"View";
 
- 
                 [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
             else
