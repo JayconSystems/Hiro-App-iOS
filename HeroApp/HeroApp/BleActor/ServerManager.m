@@ -199,8 +199,8 @@ static ServerManager* sharedServerManager;
 //                self.playTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(stopPlayingAlarmSound) userInfo:nil repeats:NO];
                 alarm = [[UILocalNotification alloc] init];
                 alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
-                alarm.alertAction = @"OK";
-                
+                alarm.alertAction = @"View";
+
                 
                 [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
