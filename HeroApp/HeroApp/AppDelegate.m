@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UIKit/UIUserNotificationSettings.h>
 
 @interface AppDelegate ()
 
@@ -52,7 +53,39 @@
     return YES;
 }
 
+NSString * const NotificationCategoryIdent  = @"ACTIONABLE";
+NSString * const NotificationActionOneIdent = @"Stop_beep";
+
+
 - (void)registerForRemoteNotification{
+    
+    UIMutableUserNotificationAction *action1;
+    action1 = [[UIMutableUserNotificationAction alloc] init];
+    [action1 setActivationMode:UIUserNotificationActivationModeBackground];
+    [action1 setTitle:@"Stop Beep"];
+    [action1 setIdentifier:NotificationActionOneIdent];
+    [action1 setDestructive:NO];
+    [action1 setAuthenticationRequired:YES];
+    
+    UIMutableUserNotificationCategory *actionCategory;
+    actionCategory = [[UIMutableUserNotificationCategory alloc] init];
+    [actionCategory setIdentifier:NotificationCategoryIdent];
+    [actionCategory setActions:@[action1]
+                    forContext:UIUserNotificationActionContextDefault];
+    
+    NSSet *categories = [NSSet setWithObject:actionCategory];
+    UIUserNotificationType types = (UIUserNotificationTypeAlert|
+                                    UIUserNotificationTypeSound|
+                                    UIUserNotificationTypeBadge);
+    
+    UIUserNotificationSettings *settings;
+    settings = [UIUserNotificationSettings settingsForTypes:types
+                                                 categories:categories];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
+    
+/*
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
@@ -63,7 +96,7 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
          (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
     }
-    
+    */
 }
 
 - (void)peripheralFound:(NSNotification *)note{
@@ -155,8 +188,14 @@
     
 }
 
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
+{
+    NSLog(@"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+}
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    
     if(notification.userInfo[@"shouldShowInApp"] && [notification.userInfo[@"shouldShowInApp"]boolValue]){
         static UIAlertView *view;
         
@@ -171,6 +210,7 @@
     
     
 }
+
 
 - (void)deviceDidUpdateProperty:(NSNotification *)note{
     HeroActor *actor = note.object;
