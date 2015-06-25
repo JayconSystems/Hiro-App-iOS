@@ -165,6 +165,14 @@ static NSInteger selectedIndexValue;;
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
     
+    if (cell.btnLocation.isSelected) {
+        NSLog(@"000000000000000000000000000000");
+        cell.btnLocation.enabled = false;
+        } else {
+        NSLog(@"111111111111111111111111111111");
+        cell.btnLocation.enabled = true;
+    }
+    
     
     return cell;
 }
@@ -239,6 +247,8 @@ static NSInteger selectedIndexValue;;
     if([textField.text length]!=0){
         actor.state[kDeviceName] = textField.text;
     }
+    
+    
     [textField resignFirstResponder];
 }
 
