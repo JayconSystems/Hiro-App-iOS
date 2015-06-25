@@ -142,8 +142,10 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.detailTextLabel.text = @"Pairing with device";
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Give your Hiro a name" message:@"Enter Name Here" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert textFieldAtIndex:0].autocapitalizationType = UITextAutocapitalizationTypeSentences;
     
     alert.delegate = self;
     alert.tag = indexPath.row;
