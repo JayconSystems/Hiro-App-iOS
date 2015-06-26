@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <UIKit/UIUserNotificationSettings.h>
+#import "ServerManager.h"
 
 @interface AppDelegate ()
 
@@ -53,36 +54,38 @@
     return YES;
 }
 
-NSString * const NotificationCategoryIdent  = @"ACTIONABLE";
-NSString * const NotificationActionOneIdent = @"Stop_beep";
+NSString * const notificationCategory  = @"Stop";
+NSString * const notificationAction1 = @"Dismiss";
 
 
 - (void)registerForRemoteNotification{
     
-    UIMutableUserNotificationAction *action1;
-    action1 = [[UIMutableUserNotificationAction alloc] init];
-    [action1 setActivationMode:UIUserNotificationActivationModeBackground];
-    [action1 setTitle:@"Stop Beep"];
-    [action1 setIdentifier:NotificationActionOneIdent];
-    [action1 setDestructive:NO];
-    [action1 setAuthenticationRequired:YES];
+    UIMutableUserNotificationAction *notificationAction1 = [[UIMutableUserNotificationAction alloc] init];
+    notificationAction1.identifier = @"Dismiss";
+    notificationAction1.title = @"Dismiss";
+    notificationAction1.activationMode = UIUserNotificationActivationModeBackground;
+    notificationAction1.destructive = NO;
+    notificationAction1.authenticationRequired = NO;
     
-    UIMutableUserNotificationCategory *actionCategory;
-    actionCategory = [[UIMutableUserNotificationCategory alloc] init];
-    [actionCategory setIdentifier:NotificationCategoryIdent];
-    [actionCategory setActions:@[action1]
-                    forContext:UIUserNotificationActionContextDefault];
+    UIMutableUserNotificationCategory *notificationCategory = [[UIMutableUserNotificationCategory alloc] init];
+    notificationCategory.identifier = @"Stop";
+    [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextDefault];
+    [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextMinimal];
     
-    NSSet *categories = [NSSet setWithObject:actionCategory];
-    UIUserNotificationType types = (UIUserNotificationTypeAlert|
-                                    UIUserNotificationTypeSound|
-                                    UIUserNotificationTypeBadge);
+    NSSet *categories = [NSSet setWithObjects:notificationCategory, nil];
     
-    UIUserNotificationSettings *settings;
-    settings = [UIUserNotificationSettings settingsForTypes:types
-                                                 categories:categories];
+    UIUserNotificationType notificationType = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:notificationType categories:categories];
     
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
+    UILocalNotification* remoteNotification = [[UILocalNotification alloc] init];
+    remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    remoteNotification.alertBody = @"Hiro wants to find your phone.";
+    remoteNotification.category = @"Stop"; //  Same as category identifier
+    [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
+    
+    NSLog(@"++++++++++++++++++++++++++++++++++++++++++++");
     
     
 /*
@@ -191,10 +194,22 @@ NSString * const NotificationActionOneIdent = @"Stop_beep";
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
 {
     NSLog(@"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+    
+    
+    if(completionHandler != nil)    //Finally call completion handler if its not nil
+        completionHandler();
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler {
+    NSLog(@"65656656565665656656665656566565656656565656");
+    
+    if(completionHandler != nil)    //Finally call completion handler if its not nil
+        completionHandler();
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    NSLog(@"9090909090909090900909090909009090909090909");
     
     if(notification.userInfo[@"shouldShowInApp"] && [notification.userInfo[@"shouldShowInApp"]boolValue]){
         static UIAlertView *view;
