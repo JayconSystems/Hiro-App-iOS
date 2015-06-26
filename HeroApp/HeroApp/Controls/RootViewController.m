@@ -164,15 +164,17 @@ static NSInteger selectedIndexValue;;
     [cell.btnLocation addTarget:self action:@selector(actionLocation:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
-    
-    if (cell.btnLocation.isSelected) {
-        NSLog(@"000000000000000000000000000000");
-        cell.btnLocation.enabled = false;
-        } else {
-        NSLog(@"111111111111111111111111111111");
-        cell.btnLocation.enabled = true;
-    }
-    
+
+    /////////////////////////////////////////////////////
+//    if (!actor.) {
+//        cell.btnLocation.userInteractionEnabled = NO;
+//        UIImage *btnImage = [UIImage imageNamed:@"Location_I.png"];
+//        [cell.btnLocation setImage:btnImage forState:UIControlStateNormal];
+//    }else{
+//        cell.btnLocation.userInteractionEnabled = YES;
+//        UIImage *btnImage = [UIImage imageNamed:@"Location_N.png"];
+//        [cell.btnLocation setImage:btnImage forState:UIControlStateNormal];
+//    }
     
     return cell;
 }
@@ -186,6 +188,7 @@ static NSInteger selectedIndexValue;;
 {
     selectedIndexValue = sender.tag;
     [self performSegueWithIdentifier:@"segueLocation" sender:self];
+    
 }
 
 -(void)actionNearBy:(UIButton  *)sender;
