@@ -81,7 +81,7 @@ NSString * const notificationAction1 = @"Dismiss";
     
     UILocalNotification* remoteNotification = [[UILocalNotification alloc] init];
     remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-    remoteNotification.alertBody = @"Hiro wants to find your phone.";
+    remoteNotification.alertBody = @"TESTING...";
     remoteNotification.category = @"Stop"; //  Same as category identifier
     [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
     
@@ -201,7 +201,8 @@ NSString * const notificationAction1 = @"Dismiss";
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler {
-    NSLog(@"65656656565665656656665656566565656656565656");
+    NSLog(@"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+");
+    [[ServerManager sharedInstance]stopPlayingAlarmSound];
     
     if(completionHandler != nil)    //Finally call completion handler if its not nil
         completionHandler();
@@ -209,7 +210,7 @@ NSString * const notificationAction1 = @"Dismiss";
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"9090909090909090900909090909009090909090909");
+    NSLog(@"/////////////////////////////////////////////////");
     
     if(notification.userInfo[@"shouldShowInApp"] && [notification.userInfo[@"shouldShowInApp"]boolValue]){
         static UIAlertView *view;
