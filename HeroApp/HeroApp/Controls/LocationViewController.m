@@ -10,6 +10,16 @@
 #import "JPSThumbnailAnnotation.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface MyCustomAnnotation : NSObject <MKAnnotation> {
+    CLLocationCoordinate2D coordinate;
+}
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+- (id)initWithLocation:(CLLocationCoordinate2D)coord;
+
+
+// Other methods and properties.
+@end
+
 @interface LocationViewController ()
 
 @end
@@ -152,7 +162,7 @@
     }
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     if ([annotation conformsToProtocol:@protocol(JPSThumbnailAnnotationProtocol)]) {
         return [((NSObject<JPSThumbnailAnnotationProtocol> *)annotation) annotationViewInMap:mapView];
     }

@@ -165,8 +165,8 @@ static NSInteger selectedIndexValue;;
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
 
-    /////////////////////////////////////////////////////
-//    if (!actor.) {
+    //////////////////////////////////////////////////////
+//    if () {
 //        cell.btnLocation.userInteractionEnabled = NO;
 //        UIImage *btnImage = [UIImage imageNamed:@"Location_I.png"];
 //        [cell.btnLocation setImage:btnImage forState:UIControlStateNormal];
