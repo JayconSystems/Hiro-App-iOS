@@ -54,52 +54,20 @@
     return YES;
 }
 
-NSString * const notificationCategory  = @"Stop";
-NSString * const notificationAction1 = @"Dismiss";
-
 
 - (void)registerForRemoteNotification{
     
-    UIMutableUserNotificationAction *notificationAction1 = [[UIMutableUserNotificationAction alloc] init];
-    notificationAction1.identifier = @"Dismiss";
-    notificationAction1.title = @"Dismiss";
-    notificationAction1.activationMode = UIUserNotificationActivationModeBackground;
-    notificationAction1.destructive = NO;
-    notificationAction1.authenticationRequired = NO;
-    
-    UIMutableUserNotificationCategory *notificationCategory = [[UIMutableUserNotificationCategory alloc] init];
-    notificationCategory.identifier = @"Stop";
-    [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextDefault];
-    [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextMinimal];
-    
-    NSSet *categories = [NSSet setWithObjects:notificationCategory, nil];
-    
-    UIUserNotificationType notificationType = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
-    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:notificationType categories:categories];
-    
-    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
-    
-    UILocalNotification* remoteNotification = [[UILocalNotification alloc] init];
-    remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-    remoteNotification.alertBody = @"TESTING...";
-    remoteNotification.category = @"Stop"; //  Same as category identifier
-    [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
-    
-    NSLog(@"++++++++++++++++++++++++++++++++++++++++++++");
-    
-    
-/*
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
-    }
-    */
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+//    {
+//        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+//        [[UIApplication sharedApplication] registerForRemoteNotifications];
+//    }
+//    else
+//    {
+//        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+//         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+//    }
+
 }
 
 - (void)peripheralFound:(NSNotification *)note{
@@ -191,18 +159,11 @@ NSString * const notificationAction1 = @"Dismiss";
     
 }
 
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler
-{
-    NSLog(@"=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-    
-    
-    if(completionHandler != nil)    //Finally call completion handler if its not nil
-        completionHandler();
-}
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler {
     NSLog(@"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+");
     [[ServerManager sharedInstance]stopPlayingAlarmSound];
+    
     
     if(completionHandler != nil)    //Finally call completion handler if its not nil
         completionHandler();
@@ -210,7 +171,6 @@ NSString * const notificationAction1 = @"Dismiss";
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    NSLog(@"/////////////////////////////////////////////////");
     
     if(notification.userInfo[@"shouldShowInApp"] && [notification.userInfo[@"shouldShowInApp"]boolValue]){
         static UIAlertView *view;

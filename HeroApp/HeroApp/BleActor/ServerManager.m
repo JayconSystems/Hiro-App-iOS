@@ -178,10 +178,11 @@ static ServerManager* sharedServerManager;
 
 - (void) peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
 {
-    static UILocalNotification *alarm;
-    if (alarm != nil)
+//    static UILocalNotification *alarm;
+    static UILocalNotification *remoteNotification;
+    if (remoteNotification != nil)
     {
-        [[UIApplication sharedApplication] cancelLocalNotification:alarm];
+        [[UIApplication sharedApplication] cancelLocalNotification:remoteNotification];
     }
     
     NSLog(@"Someone wrote to a characteristic");
@@ -195,14 +196,41 @@ static ServerManager* sharedServerManager;
             if (alertValue > 0)
             {
                 [self startPlayingAlarmSound];
+                
+                UIMutableUserNotificationAction *notificationAction1 = [[UIMutableUserNotificationAction alloc] init];
+                notificationAction1.identifier = @"Dismiss";
+                notificationAction1.title = @"Dismiss";
+                notificationAction1.activationMode = UIUserNotificationActivationModeBackground;
+                notificationAction1.destructive = NO;
+                notificationAction1.authenticationRequired = NO;
+                
+                UIMutableUserNotificationCategory *notificationCategory = [[UIMutableUserNotificationCategory alloc] init];
+                notificationCategory.identifier = @"Stop";
+                [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextDefault];
+                [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextMinimal];
+                
+                NSSet *categories = [NSSet setWithObjects:notificationCategory, nil];
+                
+                UIUserNotificationType notificationType = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+                UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:notificationType categories:categories];
+                
+                [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+                
+                remoteNotification = [[UILocalNotification alloc] init];
+//              remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+                remoteNotification.alertBody = @"TESTING...";
+                remoteNotification.category = @"Stop"; //  Same as category identifier
+                [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
+                
+                
 
 //                self.playTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(stopPlayingAlarmSound) userInfo:nil repeats:NO];
-                alarm = [[UILocalNotification alloc] init];
-                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
-                alarm.alertAction = @"View";
-
-                
-                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
+//                alarm = [[UILocalNotification alloc] init];
+//                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
+//                alarm.alertAction = @"View";
+//
+//                
+//                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
             else
             {
