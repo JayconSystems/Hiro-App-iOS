@@ -57,7 +57,7 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
     [self setupImageView];
     [self setupTitleLabel];
     [self setupSubtitleLabel];
-    [self setupDisclosureButton];
+  //[self setupDisclosureButton];
     [self setLayerProperties];
     [self setDetailGroupAlpha:0.0f];
 }
@@ -72,7 +72,7 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
 }
 
 - (void)setupTitleLabel {
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(-32.0f, 16.0f, 168.0f, 20.0f)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 16.0f, 130.0f, 20.0f)];
     _titleLabel.textColor = [UIColor darkTextColor];
     _titleLabel.font = [UIFont boldSystemFontOfSize:17];
     _titleLabel.minimumScaleFactor = 0.8f;
@@ -81,9 +81,10 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
 }
 
 - (void)setupSubtitleLabel {
-    _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(-32.0f, 36.0f, 168.0f, 20.0f)];
+    _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 36.0f, 100.0f, 20.0f)];
     _subtitleLabel.textColor = [UIColor grayColor];
     _subtitleLabel.font = [UIFont systemFontOfSize:12.0f];
+    _subtitleLabel.text = @"Last Location";
     [self addSubview:_subtitleLabel];
 }
 
@@ -222,7 +223,7 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
     BOOL growing = (animationDirection == JPSThumbnailAnnotationViewAnimationDirectionGrow);
     // Image
     [UIView animateWithDuration:kJPSThumbnailAnnotationViewAnimationDuration animations:^{
-        CGFloat xOffset = (growing ? -1 : 1) * kJPSThumbnailAnnotationViewExpandOffset/2.0f;
+        CGFloat xOffset = (growing ? -1 : 1) * kJPSThumbnailAnnotationViewExpandOffset/3.0f;
         self.imageView.frame = CGRectOffset(self.imageView.frame, xOffset, 0.0f);
     } completion:^(BOOL finished) {
         if (animationDirection == JPSThumbnailAnnotationViewAnimationDirectionShrink) {
@@ -240,7 +241,7 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
     animation.duration = kJPSThumbnailAnnotationViewAnimationDuration;
     
     // Stroke & Shadow From/To Values
-    CGRect largeRect = CGRectInset(self.bounds, -kJPSThumbnailAnnotationViewExpandOffset/2.0f, 0.0f);
+    CGRect largeRect = CGRectInset(self.bounds, -kJPSThumbnailAnnotationViewExpandOffset/3.0f, 0.0f);
     
     CGPathRef fromPath = [self newBubbleWithRect:growing ? self.bounds : largeRect];
     animation.fromValue = (__bridge id)fromPath;

@@ -126,14 +126,16 @@
     }
     
     apple.title = self.actor.state[kDeviceName];
+    apple.subtitle = @"Last Location";
     
     
     
     apple.coordinate = CLLocationCoordinate2DMake([self.actor.state[kHeroLastLocation][0]floatValue],[self.actor.state[kHeroLastLocation][1]floatValue]);
-    apple.disclosureBlock = ^{
-        DLog(@"selected Keys");
-        UIImage *image = [LocationViewController imageWithView:self.mapView];
-    };
+    
+//    apple.disclosureBlock = ^{
+//        DLog(@"selected Keys");
+//        UIImage *image = [LocationViewController imageWithView:self.mapView];
+//    };
     
     return @[[JPSThumbnailAnnotation annotationWithThumbnail:apple]];
 }
