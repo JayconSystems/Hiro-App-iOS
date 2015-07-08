@@ -26,7 +26,6 @@ static NSInteger selectedIndexValue;;
     [super viewDidLoad];
     selectedIndexValue = 0;
     
-    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -43,7 +42,6 @@ static NSInteger selectedIndexValue;;
       [UIFont fontWithName:@"OpenSans-Light" size:18],
       NSFontAttributeName, nil]];
     RegisterForNotes(@[@"DeviceIsReady"], self);
-
     
     
 }
@@ -75,7 +73,7 @@ static NSInteger selectedIndexValue;;
         
         [actor performCommand:kCommandUpdateLinkLoss withParams:[@{kCharacteristicLinkLossLevel:[NSNumber numberWithInt:linkLossLevel]}mutableCopy]];
     }
-    
+
     
 }
 
@@ -165,16 +163,7 @@ static NSInteger selectedIndexValue;;
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
 
-    //////////////////////////////////////////////////////
-//    if () {
-//        cell.btnLocation.userInteractionEnabled = NO;
-//        UIImage *btnImage = [UIImage imageNamed:@"Location_I.png"];
-//        [cell.btnLocation setImage:btnImage forState:UIControlStateNormal];
-//    }else{
-//        cell.btnLocation.userInteractionEnabled = YES;
-//        UIImage *btnImage = [UIImage imageNamed:@"Location_N.png"];
-//        [cell.btnLocation setImage:btnImage forState:UIControlStateNormal];
-//    }
+    
     
     return cell;
 }
