@@ -218,7 +218,7 @@ static ServerManager* sharedServerManager;
                 
                 remoteNotification = [[UILocalNotification alloc] init];
 //              remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-                remoteNotification.alertBody = @"TESTING...";
+                remoteNotification.alertBody = @"Hiro wants to find your phone.";
                 remoteNotification.category = @"Stop"; //  Same as category identifier
                 [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
                 
