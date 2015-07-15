@@ -26,7 +26,6 @@ static NSInteger selectedIndexValue;;
     [super viewDidLoad];
     selectedIndexValue = 0;
     
-    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -43,7 +42,6 @@ static NSInteger selectedIndexValue;;
       [UIFont fontWithName:@"OpenSans-Light" size:18],
       NSFontAttributeName, nil]];
     RegisterForNotes(@[@"DeviceIsReady"], self);
-
     
     
 }
@@ -75,7 +73,7 @@ static NSInteger selectedIndexValue;;
         
         [actor performCommand:kCommandUpdateLinkLoss withParams:[@{kCharacteristicLinkLossLevel:[NSNumber numberWithInt:linkLossLevel]}mutableCopy]];
     }
-    
+
     
 }
 
@@ -164,6 +162,7 @@ static NSInteger selectedIndexValue;;
     [cell.btnLocation addTarget:self action:@selector(actionLocation:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
+
     
     return cell;
 }
@@ -177,6 +176,7 @@ static NSInteger selectedIndexValue;;
 {
     selectedIndexValue = sender.tag;
     [self performSegueWithIdentifier:@"segueLocation" sender:self];
+    
 }
 
 -(void)actionNearBy:(UIButton  *)sender;
@@ -238,6 +238,8 @@ static NSInteger selectedIndexValue;;
     if([textField.text length]!=0){
         actor.state[kDeviceName] = textField.text;
     }
+    
+    
     [textField resignFirstResponder];
 }
 

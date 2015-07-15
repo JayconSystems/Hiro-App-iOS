@@ -4,8 +4,11 @@
    version = "2.0">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fix-delete-without-btl
+=======
+>>>>>>> fix-location
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
@@ -13,6 +16,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             filePath = "HeroApp/BleActor/HeroActor.m"
@@ -96,13 +100,25 @@
             endingLineNumber = "133"
             landmarkName = "-HiroBeepAlert:"
 >>>>>>> fix-delete-without-btl
+=======
+            filePath = "HeroApp/Controls/LocationViewController.m"
+            timestampString = "457470024.244033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-zoomMapViewToFitAnnotations:animated:"
+>>>>>>> fix-location
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> cancel-phone-beep-through-phone
 =======
 >>>>>>> fix-delete-without-btl
+=======
+>>>>>>> fix-location
 </Bucket>
