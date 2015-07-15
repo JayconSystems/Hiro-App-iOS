@@ -47,7 +47,10 @@
     if(!ReadValue(SOUND_FIND_PHONE_THUR_HIRO)){
         StoreValue(SOUND_FIND_PHONE_THUR_HIRO,@"HiroTone1");
     }
-
+    ////////////////////////////
+    NSArray *centralManagerIdentifiers =
+    launchOptions[UIApplicationLaunchOptionsBluetoothCentralsKey];
+    ////////////////////////////
     [self registerForRemoteNotification];
     return YES;
 }
