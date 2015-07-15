@@ -19,14 +19,8 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Wi-Fi Safe Zones";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    self.navigationController.navigationItem.title = @"";
 
->>>>>>> fix-narrow-wifi-screen
-=======
->>>>>>> sound-checkbox-validation
+    self.navigationController.navigationItem.title = @"";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar

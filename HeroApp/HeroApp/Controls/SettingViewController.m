@@ -22,10 +22,7 @@
     [super viewDidLoad];
 
     self.title = @"Settings";
-<<<<<<< HEAD
-=======
     self.navigationController.navigationItem.title = @"";
->>>>>>> fix-narrow-wifi-screen
 
     self.innerView.layer.cornerRadius = 3.0f;
     self.scrollView.layer.cornerRadius = 3.0f;
@@ -135,15 +132,9 @@
         if(yes){
             
             if (self.actor) {
-<<<<<<< HEAD
-                if (AppDelegate_.centralManagerActor.centralManager.state == CBCentralManagerStatePoweredOn) {
-                    [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
-                }
-=======
 
                 [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
                 
->>>>>>> sound-checkbox-validation
                 self.actor.peripheralActor.peripheral.delegate = nil;
                 
                 [AppDelegate_.deviceActors removeObject:self.actor];

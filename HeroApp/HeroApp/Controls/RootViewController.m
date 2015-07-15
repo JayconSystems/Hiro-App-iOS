@@ -243,15 +243,12 @@ static NSInteger selectedIndexValue;;
         textField.text = actorName;
     }
     else {
-        actor.state[kDeviceName] = @"My Hero";
-        textField.text = @"My Hero";
+        actor.state[kDeviceName] = @"My Hiro";
+        textField.text = @"My Hiro";
     }
     
-<<<<<<< HEAD
-    
-=======
     [AppDelegate_ storeDevicesState];
->>>>>>> textfield-space-validation
+
     [textField resignFirstResponder];
 }
 

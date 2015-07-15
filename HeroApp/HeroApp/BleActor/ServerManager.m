@@ -192,15 +192,10 @@ static ServerManager* sharedServerManager;
 
 - (void) peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
 {
-<<<<<<< HEAD
-    
-    static UILocalNotification *alarm;
-    if (alarm != nil)
-=======
 //    static UILocalNotification *alarm;
     static UILocalNotification *remoteNotification;
     if (remoteNotification != nil)
->>>>>>> cancel-phone-beep-through-phone
+
     {
         [[UIApplication sharedApplication] cancelLocalNotification:remoteNotification];
     }
@@ -246,28 +241,16 @@ static ServerManager* sharedServerManager;
                 
 
 //                self.playTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(stopPlayingAlarmSound) userInfo:nil repeats:NO];
-<<<<<<< HEAD
-                alarm = [[UILocalNotification alloc] init];
-                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
-                alarm.alertAction = @"View";
-
-                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
-=======
 //                alarm = [[UILocalNotification alloc] init];
 //                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
 //                alarm.alertAction = @"View";
 //
 //                
 //                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
->>>>>>> cancel-phone-beep-through-phone
             }
             else
             {
                 [self stopPlayingAlarmSound];
-                alarm = [[UILocalNotification alloc] init];
-                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
-                alarm.alertAction = @"View";
-                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
         }
     }
