@@ -18,6 +18,10 @@
     [super viewDidLoad];
     
     self.title = @"Settings Info";
+<<<<<<< HEAD
+=======
+    self.navigationController.navigationItem.title = @"";
+>>>>>>> fix-narrow-wifi-screen
     
     self.innerView.layer.cornerRadius = 3.0f;
     self.scrollView.layer.cornerRadius = 3.0f;

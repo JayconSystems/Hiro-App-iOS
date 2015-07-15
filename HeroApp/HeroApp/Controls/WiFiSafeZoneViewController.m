@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Wi-Fi Safe Zones";
+<<<<<<< HEAD
+=======
+    self.navigationController.navigationItem.title = @"";
+
+>>>>>>> fix-narrow-wifi-screen
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
