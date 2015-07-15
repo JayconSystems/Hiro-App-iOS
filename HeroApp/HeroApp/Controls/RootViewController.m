@@ -138,6 +138,7 @@ static NSInteger selectedIndexValue;;
     cell.txtFieldName.delegate = (id)self;
     cell.txtFieldName.tag = indexPath.row;
     cell.btnNotification.tag = indexPath.row;
+    cell.txtFieldName.delegate = self;
     if (actor.state[@"profilePic"]) {
         cell.imgHeroPic.image = getProfileImageFromDocumentDirectory(actor.state[@"profilePic"]);
     }
@@ -255,6 +256,17 @@ static NSInteger selectedIndexValue;;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
+
+// Fix the length of the Hiro name to be 17 characters length
+-(bool) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger length = [textField.text length] + [string length];
+    if (length > 17) {
+        return false;
+    }
+    else {
+        return true;
+        }
+    }
 
 
 

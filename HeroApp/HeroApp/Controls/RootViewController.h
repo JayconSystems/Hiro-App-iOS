@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "CellTableViewCell.h"
-@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface RootViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak,nonatomic) IBOutlet  UITableView *tableView;
 
