@@ -3,6 +3,9 @@
    type = "1"
    version = "2.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix-delete-without-btl
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
@@ -10,6 +13,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
             filePath = "HeroApp/BleActor/HeroActor.m"
             timestampString = "458234192.936757"
@@ -27,6 +31,15 @@
             endingLineNumber = "210"
             landmarkName = "-peripheralManager:didReceiveWriteRequests:"
 >>>>>>> cancel-phone-beep
+=======
+            filePath = "HeroApp/Controls/SettingViewController.m"
+            timestampString = "456287339.287537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-HiroBeepAlert:"
+>>>>>>> fix-delete-without-btl
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,6 +49,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
             filePath = "HeroApp/BleActor/HeroActor.m"
             timestampString = "458250665.747579"
@@ -73,10 +87,22 @@
             endingLineNumber = "190"
             landmarkName = "-isOnPhoneCall"
 >>>>>>> cancel-phone-beep
+=======
+            filePath = "HeroApp/Controls/SettingViewController.m"
+            timestampString = "456287339.287537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-HiroBeepAlert:"
+>>>>>>> fix-delete-without-btl
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
+<<<<<<< HEAD
 =======
 >>>>>>> cancel-phone-beep-through-phone
+=======
+>>>>>>> fix-delete-without-btl
 </Bucket>

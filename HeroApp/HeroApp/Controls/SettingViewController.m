@@ -141,8 +141,9 @@
         if(yes){
             
             if (self.actor) {
-                [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
-                
+                if (AppDelegate_.centralManagerActor.centralManager.state == CBCentralManagerStatePoweredOn) {
+                    [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
+                }
                 self.actor.peripheralActor.peripheral.delegate = nil;
                 
                 [AppDelegate_.deviceActors removeObject:self.actor];
