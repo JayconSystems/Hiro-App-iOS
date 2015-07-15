@@ -236,11 +236,22 @@ static NSInteger selectedIndexValue;;
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     HeroActor *actor = AppDelegate_.deviceActors[textField.tag];
-    if([textField.text length]!=0){
-        actor.state[kDeviceName] = textField.text;
+    NSString *actorName = [textField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    
+    if([actorName length] != 0){
+        actor.state[kDeviceName] = actorName;
+        textField.text = actorName;
+    }
+    else {
+        actor.state[kDeviceName] = @"My Hero";
+        textField.text = @"My Hero";
     }
     
+<<<<<<< HEAD
     
+=======
+    [AppDelegate_ storeDevicesState];
+>>>>>>> textfield-space-validation
     [textField resignFirstResponder];
 }
 
