@@ -9,6 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "HeroApp/BleActor/HeroActor.m"
             timestampString = "458234192.936757"
             startingColumnNumber = "9223372036854775807"
@@ -16,6 +17,15 @@
             startingLineNumber = "173"
             endingLineNumber = "173"
             landmarkName = "-writeData:forCharacteristicPath:"
+=======
+            filePath = "HeroApp/BleActor/ServerManager.m"
+            timestampString = "456346588.643085"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-peripheralManager:didReceiveWriteRequests:"
+>>>>>>> cancel-phone-beep
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,6 +35,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "HeroApp/BleActor/HeroActor.m"
             timestampString = "458250665.747579"
             startingColumnNumber = "9223372036854775807"
@@ -52,6 +63,15 @@
             startingLineNumber = "279"
             endingLineNumber = "279"
             landmarkName = "-centralManagerDidUpdateState:"
+=======
+            filePath = "HeroApp/BleActor/ServerManager.m"
+            timestampString = "456348173.815939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "-isOnPhoneCall"
+>>>>>>> cancel-phone-beep
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
