@@ -165,7 +165,6 @@ static NSInteger selectedIndexValue;;
     [cell.btnNearBy addTarget:self action:@selector(actionNearBy:) forControlEvents:UIControlEventTouchUpInside];
     [cell.btnSetting addTarget:self action:@selector(actionSettings:) forControlEvents:UIControlEventTouchUpInside];
     
-    
     return cell;
 }
 

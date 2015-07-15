@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <UIKit/UIUserNotificationSettings.h>
+#import "ServerManager.h"
 
 @interface AppDelegate ()
 
@@ -55,18 +57,20 @@
     return YES;
 }
 
+
 - (void)registerForRemoteNotification{
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-    {
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    else
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
-         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
-    }
     
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+//    {
+//        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+//        [[UIApplication sharedApplication] registerForRemoteNotifications];
+//    }
+//    else
+//    {
+//        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+//         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+//    }
+
 }
 
 - (void)peripheralFound:(NSNotification *)note{
@@ -158,8 +162,19 @@
     
 }
 
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void(^)())completionHandler {
+    NSLog(@"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+--+-+-+-+-+");
+    [[ServerManager sharedInstance]stopPlayingAlarmSound];
+    
+    
+    if(completionHandler != nil)    //Finally call completion handler if its not nil
+        completionHandler();
+}
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    
     if(notification.userInfo[@"shouldShowInApp"] && [notification.userInfo[@"shouldShowInApp"]boolValue]){
         static UIAlertView *view;
         
@@ -174,6 +189,7 @@
     
     
 }
+
 
 - (void)deviceDidUpdateProperty:(NSNotification *)note{
     HeroActor *actor = note.object;
