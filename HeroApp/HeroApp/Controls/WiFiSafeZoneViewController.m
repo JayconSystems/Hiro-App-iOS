@@ -20,10 +20,13 @@
     
     self.title = @"Wi-Fi Safe Zones";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     self.navigationController.navigationItem.title = @"";
 
 >>>>>>> fix-narrow-wifi-screen
+=======
+>>>>>>> sound-checkbox-validation
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
@@ -43,9 +46,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     
     
-    
-    
 }
+
 
 - (void)appDidBecomeActive:(NSNotification *)note {
     [self checkIfNetworkConnected];

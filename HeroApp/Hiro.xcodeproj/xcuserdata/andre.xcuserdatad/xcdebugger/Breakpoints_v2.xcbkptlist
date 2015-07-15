@@ -6,12 +6,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fix-delete-without-btl
 =======
 >>>>>>> fix-location
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+>>>>>>> sound-checkbox-validation
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
@@ -19,6 +22,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,17 +46,23 @@
 =======
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+>>>>>>> sound-checkbox-validation
             filePath = "HeroApp/Controls/SettingViewController.m"
             timestampString = "456287339.287537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
+<<<<<<< HEAD
             landmarkName = "-HiroBeepAlert:"
 <<<<<<< HEAD
 >>>>>>> fix-delete-without-btl
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+            landmarkName = "-actionDelete:"
+>>>>>>> sound-checkbox-validation
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,6 +72,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,12 +115,15 @@
 =======
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+>>>>>>> sound-checkbox-validation
             filePath = "HeroApp/Controls/SettingViewController.m"
             timestampString = "456287339.287537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
+<<<<<<< HEAD
             landmarkName = "-HiroBeepAlert:"
 <<<<<<< HEAD
 >>>>>>> fix-delete-without-btl
@@ -124,10 +138,14 @@
 >>>>>>> fix-location
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+            landmarkName = "-actionDelete:"
+>>>>>>> sound-checkbox-validation
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -139,4 +157,6 @@
 >>>>>>> fix-location
 =======
 >>>>>>> fix-narrow-wifi-screen
+=======
+>>>>>>> sound-checkbox-validation
 </Bucket>
