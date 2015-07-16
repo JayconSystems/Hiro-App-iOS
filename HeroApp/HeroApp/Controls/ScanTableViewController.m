@@ -149,6 +149,8 @@
     
     alert.delegate = self;
     alert.tag = indexPath.row;
+    UITextField *alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.delegate = self;
     [alert show];
 
 }
@@ -206,10 +208,22 @@
             AppDelegate_.deviceLogicalName = txtLogicalName.text;
         }
         else{
-            AppDelegate_.deviceLogicalName = @"My Hero";
+            AppDelegate_.deviceLogicalName = @"My Hiro";
         }
+        
         self.selectedPeripheral = self.peripherals[alertView.tag];
         [AppDelegate_.centralManagerActor addPeripheral:self.peripherals[alertView.tag]];
+    }
+}
+
+-(bool) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
+    NSUInteger length = [textField.text length] + [string length];
+    if (length > 17) {
+        return false;
+    }
+    else {
+        return true;
     }
 }
 

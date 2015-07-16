@@ -1117,7 +1117,7 @@
                                 <rect key="frame" x="10" y="73" width="300" height="487"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-Zk-0Sq">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="484"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-Fi Safe Zone Feature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-v4-orL">
                                                 <rect key="frame" x="17" y="18" width="280" height="21"/>
@@ -1128,22 +1128,22 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-Yi-Fj0">
-                                                <rect key="frame" x="27" y="288" width="256" height="123"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-xt-CQa">
+                                                <rect key="frame" x="27" y="47" width="256" height="226"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="76" id="VQZ-69-HNL"/>
+                                                    <constraint firstAttribute="height" constant="226" id="rTS-Wj-erK"/>
                                                 </constraints>
-                                                <string key="text">Note that you will still be able to buzz your Hiro at any time as long as they are both in range. If they are not in range, you will be able to see its last disconnection location from the pin dropped on the map.</string>
+                                                <string key="text">Select the Wi-Fi network in which you do not wish to receive disconnect notifications. This feature prevents your Hiro from buzzing and your phone from ringing when they go beyond the Bluetooth connection range. An example would be if you are constantly getting away from your Hiro in your home (from bedroom to garage), but do not want to get disconnect notifications.</string>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-xt-CQa">
-                                                <rect key="frame" x="27" y="47" width="256" height="227"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-Yi-Fj0">
+                                                <rect key="frame" x="27" y="288" width="256" height="123"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="151" id="rTS-Wj-erK"/>
+                                                    <constraint firstAttribute="height" constant="123" id="VQZ-69-HNL"/>
                                                 </constraints>
-                                                <string key="text">Select the Wi-Fi network in which you do not wish to receive disconnect notifications. This feature prevents your Hiro from buzzing and your phone from ringing when they go beyond the Bluetooth connection range. An example would be if you are constantly getting away from your Hiro in your home (from bedroom to garage), but do not want to get disconnect notifications.</string>
+                                                <string key="text">Note that you will still be able to buzz your Hiro at any time as long as they are both in range. If they are not in range, you will be able to see its last disconnection location from the pin dropped on the map.</string>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1153,11 +1153,11 @@
                                         <constraints>
                                             <constraint firstItem="3VP-v4-orL" firstAttribute="leading" secondItem="mLc-Zk-0Sq" secondAttribute="leading" constant="17" id="1Ao-CW-477"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="leading" secondItem="mLc-Zk-0Sq" secondAttribute="leading" constant="27" id="1EI-Tr-G6M"/>
-                                            <constraint firstAttribute="height" constant="700" id="BAS-w8-vob"/>
+                                            <constraint firstAttribute="height" constant="484" id="BAS-w8-vob"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="top" secondItem="mLc-Zk-0Sq" secondAttribute="top" constant="47" id="KRh-tu-7cR"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="centerX" secondItem="mLc-Zk-0Sq" secondAttribute="centerX" constant="5" id="Mcm-t0-JdF"/>
                                             <constraint firstItem="3VP-v4-orL" firstAttribute="top" secondItem="mLc-Zk-0Sq" secondAttribute="top" constant="18" id="Mzg-Ay-S3d"/>
-                                            <constraint firstItem="c3O-Yi-Fj0" firstAttribute="top" secondItem="5FC-xt-CQa" secondAttribute="bottom" constant="8" id="NEu-Nh-vhv"/>
+                                            <constraint firstItem="c3O-Yi-Fj0" firstAttribute="top" secondItem="5FC-xt-CQa" secondAttribute="bottom" constant="15" id="NEu-Nh-vhv"/>
                                             <constraint firstAttribute="trailing" secondItem="3VP-v4-orL" secondAttribute="trailing" constant="3" id="TOE-J4-fsl"/>
                                             <constraint firstItem="c3O-Yi-Fj0" firstAttribute="trailing" secondItem="5FC-xt-CQa" secondAttribute="trailing" id="fxb-nL-2TS"/>
                                             <constraint firstItem="c3O-Yi-Fj0" firstAttribute="leading" secondItem="5FC-xt-CQa" secondAttribute="leading" id="ocC-xC-nYH"/>
@@ -1170,7 +1170,7 @@
                                     <constraint firstAttribute="trailing" secondItem="mLc-Zk-0Sq" secondAttribute="trailing" id="Rgz-RR-gHD"/>
                                     <constraint firstItem="mLc-Zk-0Sq" firstAttribute="leading" secondItem="mXz-Wx-dPO" secondAttribute="leading" id="aRf-Zo-1J3"/>
                                     <constraint firstItem="mLc-Zk-0Sq" firstAttribute="top" secondItem="mXz-Wx-dPO" secondAttribute="top" id="x5I-ch-W13"/>
-                                    <constraint firstAttribute="bottom" secondItem="mLc-Zk-0Sq" secondAttribute="bottom" id="yeA-vb-lbj"/>
+                                    <constraint firstAttribute="bottom" secondItem="mLc-Zk-0Sq" secondAttribute="bottom" constant="3" id="yeA-vb-lbj"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="T1E-8j-gpv" id="kYY-ad-jtY"/>
