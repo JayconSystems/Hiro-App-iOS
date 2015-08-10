@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"Wi-Fi Safe Zones";
+
+    self.navigationController.navigationItem.title = @"";
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -36,9 +40,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     
     
-    
-    
 }
+
 
 - (void)appDidBecomeActive:(NSNotification *)note {
     [self checkIfNetworkConnected];

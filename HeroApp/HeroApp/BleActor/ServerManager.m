@@ -8,6 +8,8 @@
 
 #import "ServerManager.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <CoreTelephony/CTCallCenter.h>
+#import <CoreTelephony/CTCall.h>
 
 @implementation ServerManager
 {
@@ -176,12 +178,26 @@ static ServerManager* sharedServerManager;
     NSLog(@"Did add peripheral service, with error %@.", error);
 }
 
+-(bool)isOnPhoneCall {
+    
+    //Returns TRUE/YES if the user is currently on a phone call
+    CTCallCenter *callCenter = [[CTCallCenter alloc] init];
+    for (CTCall *call in callCenter.currentCalls)  {
+        if (call.callState == CTCallStateConnected) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 - (void) peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests
 {
-    static UILocalNotification *alarm;
-    if (alarm != nil)
+//    static UILocalNotification *alarm;
+    static UILocalNotification *remoteNotification;
+    if (remoteNotification != nil)
+
     {
-        [[UIApplication sharedApplication] cancelLocalNotification:alarm];
+        [[UIApplication sharedApplication] cancelLocalNotification:remoteNotification];
     }
     
     NSLog(@"Someone wrote to a characteristic");
@@ -192,17 +208,45 @@ static ServerManager* sharedServerManager;
             NSUInteger alertValue = *(NSUInteger*) [[request value] bytes];
 //            NSUInteger requestOffset = request.offset;
 
-            if (alertValue > 0)
+            if (alertValue > 0 && ![self isOnPhoneCall])
             {
+                
                 [self startPlayingAlarmSound];
+                
+                UIMutableUserNotificationAction *notificationAction1 = [[UIMutableUserNotificationAction alloc] init];
+                notificationAction1.identifier = @"Dismiss";
+                notificationAction1.title = @"Dismiss";
+                notificationAction1.activationMode = UIUserNotificationActivationModeBackground;
+                notificationAction1.destructive = NO;
+                notificationAction1.authenticationRequired = NO;
+                
+                UIMutableUserNotificationCategory *notificationCategory = [[UIMutableUserNotificationCategory alloc] init];
+                notificationCategory.identifier = @"Stop";
+                [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextDefault];
+                [notificationCategory setActions:@[notificationAction1] forContext:UIUserNotificationActionContextMinimal];
+                
+                NSSet *categories = [NSSet setWithObjects:notificationCategory, nil];
+                
+                UIUserNotificationType notificationType = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+                UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:notificationType categories:categories];
+                
+                [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+                
+                remoteNotification = [[UILocalNotification alloc] init];
+//              remoteNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+                remoteNotification.alertBody = @"Hiro wants to find your phone.";
+                remoteNotification.category = @"Stop"; //  Same as category identifier
+                [[UIApplication sharedApplication] scheduleLocalNotification:remoteNotification];
+                
+                
 
 //                self.playTimer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(stopPlayingAlarmSound) userInfo:nil repeats:NO];
-                alarm = [[UILocalNotification alloc] init];
-                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
-                alarm.alertAction = @"OK";
-                
-                
-                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
+//                alarm = [[UILocalNotification alloc] init];
+//                alarm.alertBody = [NSString stringWithFormat:@"Hiro wants to find your phone."];
+//                alarm.alertAction = @"View";
+//
+//                
+//                [[UIApplication sharedApplication] presentLocalNotificationNow:alarm];
             }
             else
             {

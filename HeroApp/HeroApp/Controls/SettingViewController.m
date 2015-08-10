@@ -22,6 +22,8 @@
     [super viewDidLoad];
 
     self.title = @"Settings";
+    self.navigationController.navigationItem.title = @"";
+
     self.innerView.layer.cornerRadius = 3.0f;
     self.scrollView.layer.cornerRadius = 3.0f;
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -41,22 +43,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    if([ReadValue(SOUND_FIND_PHONE_THUR_HIRO) isEqualToString:@"HiroTone1"]){
-        [self.btnFindPhoneAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
-    }
-    else{
-        [self.btnFindPhoneAlert setTitle:[NSString stringWithFormat:@"%@ >",ReadValue(SOUND_FIND_PHONE_THUR_HIRO)] forState:UIControlStateNormal];
-    }
-    
-    if([self.actor.state[SOUND_PHONE_SOUND_ALERT] isEqualToString:@"HiroTone2"]){
-        [self.btnSoundAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
-    }
-    else{
-         [self.btnSoundAlert setTitle:[NSString stringWithFormat:@"%@ >",self.actor.state[SOUND_PHONE_SOUND_ALERT]] forState:UIControlStateNormal];
-    }
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -117,19 +103,25 @@
 }
 - (IBAction)PhoneSoundAlert:(UIButton *)sender {
     if (sender.isSelected) {
+        [self.btnSoundAlert setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
         self.btnHiroSoundAlert.selected = false;
+        self.btnSoundAlert.enabled = false;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:FALSE];
     }else{
+        [self.btnSoundAlert setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.btnHiroSoundAlert.selected = true;
+        self.btnSoundAlert.enabled = true;
         self.actor.state[kPhoneSoundAlertISEnable] = [NSNumber numberWithBool:TRUE];
     }
 }
 - (IBAction)HiroBeepAlert:(UIButton *)sender {
     if (sender.isSelected) {
         self.btnBeepAlert.selected = false;
-        self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:FALSE];;
+        self.segHiroBeepAlert.enabled = false;
+        self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:FALSE];
     }else{
         self.btnBeepAlert.selected = true;
+        self.segHiroBeepAlert.enabled = true;
         self.actor.state[kHeroAlertIsEnable] = [NSNumber numberWithBool:TRUE];
     }
     [self checkAndUpdateLinkLoss];
@@ -140,6 +132,7 @@
         if(yes){
             
             if (self.actor) {
+
                 [AppDelegate_.centralManagerActor.centralManager cancelPeripheralConnection:self.actor.peripheralActor.peripheral];
                 
                 self.actor.peripheralActor.peripheral.delegate = nil;
@@ -186,5 +179,47 @@
 - (IBAction)actionPhoneThroughFeature:(id)sender {
     index = 2;
     [self performSegueWithIdentifier:@"segueringtone" sender:self];
+}
+
+// Changed viewWillAppear for viewDidAppear to fix button status issue(swipe)
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self updateButtonRingtoneButtons];
+    [self updateButtonsActiveStatus];
+}
+
+-(void)updateButtonsActiveStatus {
+    
+    bool alertIsEnabled = [self.actor.state[kPhoneSoundAlertISEnable] boolValue];
+    bool beepIsEnabled = [self.actor.state[kHeroAlertIsEnable] boolValue];
+    if (!alertIsEnabled) {
+        [self.btnSoundAlert setTitleColor:[UIColor lightTextColor] forState:UIControlStateNormal];
+    }
+
+    self.btnHiroSoundAlert.selected = alertIsEnabled;
+    self.btnSoundAlert.enabled = alertIsEnabled;
+    self.btnBeepAlert.selected = beepIsEnabled;
+    self.segHiroBeepAlert.enabled = beepIsEnabled;
+    
+}
+
+-(void)updateButtonRingtoneButtons {
+    
+    
+    if([ReadValue(SOUND_FIND_PHONE_THUR_HIRO) isEqualToString:@"HiroTone1"]){
+        [self.btnFindPhoneAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
+    }
+    else{
+        [self.btnFindPhoneAlert setTitle:[NSString stringWithFormat:@"%@ >",ReadValue(SOUND_FIND_PHONE_THUR_HIRO)] forState:UIControlStateNormal];
+    }
+    
+    if([self.actor.state[SOUND_PHONE_SOUND_ALERT] isEqualToString:@"HiroTone2"]){
+        [self.btnSoundAlert setTitle:@"Default ringtone >" forState:UIControlStateNormal];
+    }
+    else{
+        [self.btnSoundAlert setTitle:[NSString stringWithFormat:@"%@ >", self.actor.state[SOUND_PHONE_SOUND_ALERT]] forState:UIControlStateNormal];
+    }
+  
+    
 }
 @end

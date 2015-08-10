@@ -112,9 +112,10 @@
         [self.imgViewBattery setImage:[UIImage imageNamed:batteryImage]];
         
         [self.btnNearBy setImage:[UIImage imageNamed:rssiImage] forState:UIControlStateNormal];
-        self.btnLocation.enabled = true;
+        self.btnLocation.enabled = false;
         self.btnNearBy.enabled = true;
         self.btnNotification.enabled = true;
+        
         
         
     }
@@ -124,6 +125,7 @@
         [self.imgViewBattery setImage:[UIImage imageNamed:@"Battery_I"]];
         self.btnNearBy.enabled = false;
         self.btnNotification.enabled = false;
+        self.btnLocation.enabled = true;
     }
 }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SDs-A5-0Qy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SDs-A5-0Qy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,7 +49,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Settings-->
         <scene sceneID="nDQ-Wc-8XC">
             <objects>
                 <viewController id="lgp-d9-f1M" customClass="SettingViewController" sceneMemberID="viewController">
@@ -119,7 +119,7 @@
                                                     <constraint firstAttribute="width" constant="205" id="aBt-YC-7C7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone sound alert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSz-gG-fNc">
@@ -128,7 +128,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="u24-NW-eak"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low battery notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-NX-czl">
@@ -146,7 +146,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="5Eo-Uy-XgS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiro beep alert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMo-Ch-3cI">
@@ -155,7 +155,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="xJB-ND-fCI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Find phone thru Hiro&quot; feature" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q0-yF-NJw">
@@ -165,7 +165,7 @@
                                                     <constraint firstAttribute="width" constant="267" id="DB1-dF-9DX"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-IH-rwa">
@@ -323,7 +323,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Qws-1B-aDZ"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Qws-1B-aDZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QPY-OF-Ums"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnBeepAlert" destination="q27-Cf-wtK" id="Y5e-mQ-a1L"/>
                         <outlet property="btnDelete" destination="D6h-xE-FJ5" id="07l-i4-ykb"/>
@@ -351,7 +353,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Cas-5Z-39J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ringtonecell" id="uAC-m3-01k">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -576,7 +578,9 @@
                             <constraint firstItem="llU-RE-OiV" firstAttribute="top" secondItem="VUY-Vx-XyP" secondAttribute="bottom" constant="9" id="uhS-09-rHe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Epv-Rl-pnz"/>
+                    <navigationItem key="navigationItem" id="Epv-Rl-pnz">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TOi-qm-OJp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="innerView" destination="Y34-Xk-lxO" id="fHy-9C-J3c"/>
                         <outlet property="scrollView" destination="llU-RE-OiV" id="8XC-8a-3uq"/>
@@ -593,7 +597,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="KEw-Hn-VUf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scanCell" textLabel="SSN-t3-Ght" detailTextLabel="MCC-HW-8nI" style="IBUITableViewCellStyleValue1" id="WdD-jt-3zA">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -603,7 +607,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Hiro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SSN-t3-Ght">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MCC-HW-8nI">
@@ -697,13 +701,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Connected Wi-Fi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99C-RJ-Zym">
                                         <rect key="frame" x="26" y="19" width="231.5" height="29"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Safe Zones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPu-RU-BUn">
                                         <rect key="frame" x="26" y="117" width="190" height="29"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paul's Internet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="58a-6q-vc9">
@@ -712,7 +716,7 @@
                                             <constraint firstAttribute="width" constant="170" id="B8e-Ct-idm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSansLight-Italic" family="Open Sans" pointSize="19"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygs-6s-hCG">
@@ -746,7 +750,7 @@
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="House Network" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTT-kD-bGy">
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="OpenSansLight-Italic" family="Open Sans" pointSize="19"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -761,7 +765,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe on network to remove it" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzW-eX-F57">
                                         <rect key="frame" x="26" y="149" width="163.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -798,6 +802,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wi-Fi Safe Zones" id="AIp-24-RtI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="EHc-Kc-pQh"/>
                         <barButtonItem key="rightBarButtonItem" image="InfoButton_A" id="GMa-hc-Ld0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -839,10 +844,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9mz-IC-sai" id="rWq-Sk-Xe3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78A-hU-YDU">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78A-hU-YDU">
                                                     <rect key="frame" x="15" y="15" width="290" height="100"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="base" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-cy-1Sb">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-cy-1Sb">
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
                                                         </imageView>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzL-ji-mIK" userLabel="PhotoView">
@@ -865,42 +870,42 @@
                                                                 <constraint firstAttribute="bottom" secondItem="xBP-sv-HY4" secondAttribute="bottom" id="hjz-9Z-Dhb"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-Iu-1TY">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-Iu-1TY">
                                                             <rect key="frame" x="97" y="54" width="190" height="1"/>
                                                             <color key="backgroundColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="L3d-h6-hp0"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-4r-POJ">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-4r-POJ">
                                                             <rect key="frame" x="244" y="54" width="1" height="40"/>
                                                             <color key="backgroundColor" red="0.83529411760000005" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Hiro" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="daE-N7-lno">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="My Hiro" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="daE-N7-lno">
                                                             <rect key="frame" x="101" y="8" width="145" height="38"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="145" id="4SL-9q-5py"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="23"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="2uM-yd-mcj" id="1k2-jJ-7P0"/>
                                                             </connections>
                                                         </textField>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Battery_N4" translatesAutoresizingMaskIntoConstraints="NO" id="x2p-P3-8qw">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Battery_N4" translatesAutoresizingMaskIntoConstraints="NO" id="x2p-P3-8qw">
                                                             <rect key="frame" x="253" y="20" width="26" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="Phg-AE-6T7"/>
                                                                 <constraint firstAttribute="width" constant="26" id="u8g-Xw-xOA"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j7-Z5-tqt">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j7-Z5-tqt">
                                                             <rect key="frame" x="249" y="60" width="35" height="35"/>
                                                             <state key="normal" image="Settings_N">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
-                                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIu-qC-S68">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIu-qC-S68">
                                                             <rect key="frame" x="96" y="57" width="145" height="41"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BI-9U-OnN">
@@ -1025,6 +1030,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Hiros" id="X8i-7d-AIk">
+                        <barButtonItem key="backBarButtonItem" title=" " id="91H-5t-zso"/>
                         <barButtonItem key="leftBarButtonItem" image="wifi" id="2VM-pE-awu">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1111,7 +1117,7 @@
                                 <rect key="frame" x="10" y="73" width="300" height="487"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-Zk-0Sq">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="484"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wi-Fi Safe Zone Feature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-v4-orL">
                                                 <rect key="frame" x="17" y="18" width="280" height="21"/>
@@ -1122,21 +1128,22 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-xt-CQa">
-                                                <rect key="frame" x="27" y="47" width="256" height="151"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-xt-CQa">
+                                                <rect key="frame" x="27" y="47" width="256" height="226"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="151" id="rTS-Wj-erK"/>
+                                                    <constraint firstAttribute="height" constant="226" id="rTS-Wj-erK"/>
                                                 </constraints>
-                                                <string key="text">Select the Wi-Fi Networks where you do not need disconnect notifications. This feature prevents your Hiro and Phone from buzzing when, for example, you leave your phone in a room that is over 200ft away from another room.</string>
+                                                <string key="text">Select the Wi-Fi network in which you do not wish to receive disconnect notifications. This feature prevents your Hiro from buzzing and your phone from ringing when they go beyond the Bluetooth connection range. An example would be if you are constantly getting away from your Hiro in your home (from bedroom to garage), but do not want to get disconnect notifications.</string>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note that you will still be able to buzz your Hiro at any time as long as you are in the 200 feet range." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-Yi-Fj0">
-                                                <rect key="frame" x="27" y="206" width="256" height="76"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-Yi-Fj0">
+                                                <rect key="frame" x="27" y="288" width="256" height="123"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="76" id="VQZ-69-HNL"/>
+                                                    <constraint firstAttribute="height" constant="123" id="VQZ-69-HNL"/>
                                                 </constraints>
+                                                <string key="text">Note that you will still be able to buzz your Hiro at any time as long as they are both in range. If they are not in range, you will be able to see its last disconnection location from the pin dropped on the map.</string>
                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1146,11 +1153,11 @@
                                         <constraints>
                                             <constraint firstItem="3VP-v4-orL" firstAttribute="leading" secondItem="mLc-Zk-0Sq" secondAttribute="leading" constant="17" id="1Ao-CW-477"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="leading" secondItem="mLc-Zk-0Sq" secondAttribute="leading" constant="27" id="1EI-Tr-G6M"/>
-                                            <constraint firstAttribute="height" constant="700" id="BAS-w8-vob"/>
+                                            <constraint firstAttribute="height" constant="484" id="BAS-w8-vob"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="top" secondItem="mLc-Zk-0Sq" secondAttribute="top" constant="47" id="KRh-tu-7cR"/>
                                             <constraint firstItem="5FC-xt-CQa" firstAttribute="centerX" secondItem="mLc-Zk-0Sq" secondAttribute="centerX" constant="5" id="Mcm-t0-JdF"/>
                                             <constraint firstItem="3VP-v4-orL" firstAttribute="top" secondItem="mLc-Zk-0Sq" secondAttribute="top" constant="18" id="Mzg-Ay-S3d"/>
-                                            <constraint firstItem="c3O-Yi-Fj0" firstAttribute="top" secondItem="5FC-xt-CQa" secondAttribute="bottom" constant="8" id="NEu-Nh-vhv"/>
+                                            <constraint firstItem="c3O-Yi-Fj0" firstAttribute="top" secondItem="5FC-xt-CQa" secondAttribute="bottom" constant="15" id="NEu-Nh-vhv"/>
                                             <constraint firstAttribute="trailing" secondItem="3VP-v4-orL" secondAttribute="trailing" constant="3" id="TOE-J4-fsl"/>
                                             <constraint firstItem="c3O-Yi-Fj0" firstAttribute="trailing" secondItem="5FC-xt-CQa" secondAttribute="trailing" id="fxb-nL-2TS"/>
                                             <constraint firstItem="c3O-Yi-Fj0" firstAttribute="leading" secondItem="5FC-xt-CQa" secondAttribute="leading" id="ocC-xC-nYH"/>
@@ -1163,7 +1170,7 @@
                                     <constraint firstAttribute="trailing" secondItem="mLc-Zk-0Sq" secondAttribute="trailing" id="Rgz-RR-gHD"/>
                                     <constraint firstItem="mLc-Zk-0Sq" firstAttribute="leading" secondItem="mXz-Wx-dPO" secondAttribute="leading" id="aRf-Zo-1J3"/>
                                     <constraint firstItem="mLc-Zk-0Sq" firstAttribute="top" secondItem="mXz-Wx-dPO" secondAttribute="top" id="x5I-ch-W13"/>
-                                    <constraint firstAttribute="bottom" secondItem="mLc-Zk-0Sq" secondAttribute="bottom" id="yeA-vb-lbj"/>
+                                    <constraint firstAttribute="bottom" secondItem="mLc-Zk-0Sq" secondAttribute="bottom" constant="3" id="yeA-vb-lbj"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="T1E-8j-gpv" id="kYY-ad-jtY"/>

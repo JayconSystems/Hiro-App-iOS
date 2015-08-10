@@ -217,12 +217,21 @@ NSString *CharacteristicPathWithArray(NSArray *arr) {
 - (id)initWithServiceUUIDs:(NSArray *)aServiceUUIDs {
 	if (self = [super init]) {
         self.serviceUUIDs = aServiceUUIDs;
-		self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+        ///////////////////////////////////////////
+        self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:@{ CBCentralManagerOptionRestoreIdentifierKey:@"myCentralManagerIdentifier" }];
+        ///////////////////////////////////////////
         self.peripherals = [NSMutableArray array];
         self.peripheralList = [NSMutableArray array];
     }
     return self;
 }
+
+//////////////////////////////////////////////////
+- (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary *)state {
+    
+    NSArray *peripherals =  state[CBCentralManagerRestoredStatePeripheralsKey];
+}
+//////////////////////////////////////////////////
 
 - (void)retrievePeripherals {
     DLog(@"scanning for peripherals with service UUIDs %@", self.serviceUUIDs);
