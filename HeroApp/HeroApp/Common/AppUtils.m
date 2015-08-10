@@ -499,7 +499,7 @@ void SendLocalNotificationForActor(HeroActor *deviceActor, BOOL isConnect)
         [[UIApplication sharedApplication] cancelLocalNotification: deviceActor.notification];
     }
     
-     deviceActor.notification = [[UILocalNotification alloc]init];
+    deviceActor.notification = [[UILocalNotification alloc]init];
     
     
     // Current date
@@ -511,10 +511,11 @@ void SendLocalNotificationForActor(HeroActor *deviceActor, BOOL isConnect)
     // Set the fire date/time
     [deviceActor.notification setFireDate:dateToFire];
     [deviceActor.notification setTimeZone:[NSTimeZone defaultTimeZone]];
+ 
     
     if(isConnect)
         DLog(@"Device is connected");
-        //[deviceActor.notification setAlertBody:[NSString stringWithFormat:@"%@ is connected!",deviceActor.state[kDeviceName]]];
+    //[deviceActor.notification setAlertBody:[NSString stringWithFormat:@"%@ is connected!",deviceActor.state[kDeviceName]]];
     else{
         [deviceActor.notification setAlertBody:[NSString stringWithFormat:@"%@ is getting away!",deviceActor.state[kDeviceName]]];
     }

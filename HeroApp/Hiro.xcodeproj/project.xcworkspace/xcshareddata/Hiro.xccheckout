@@ -12,8 +12,6 @@
 	<dict>
 		<key>23048E1C4F28F0CCDE7F160692A26B8E440CB397</key>
 		<string>https://github.com/andrefontolan/Hiro-App-iOS.git</string>
-		<key>E2210B7254D7386F2067BDED21DFB03C9ED64305</key>
-		<string>https://xp-dev.com/git/HeroAppIOS</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HeroApp/Hiro.xcodeproj</string>
@@ -21,8 +19,6 @@
 	<dict>
 		<key>23048E1C4F28F0CCDE7F160692A26B8E440CB397</key>
 		<string>../../..</string>
-		<key>E2210B7254D7386F2067BDED21DFB03C9ED64305</key>
-		<string>../../../../HeroAppIOS</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/andrefontolan/Hiro-App-iOS.git</string>
@@ -32,14 +28,6 @@
 	<string>23048E1C4F28F0CCDE7F160692A26B8E440CB397</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E2210B7254D7386F2067BDED21DFB03C9ED64305</string>
-			<key>IDESourceControlWCCName</key>
-			<string>HeroAppIOS</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

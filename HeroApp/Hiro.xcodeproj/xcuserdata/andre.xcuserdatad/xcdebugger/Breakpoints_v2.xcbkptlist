@@ -2,19 +2,6 @@
 <Bucket
    type = "1"
    version = "2.0">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fix-delete-without-btl
-=======
->>>>>>> fix-location
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
->>>>>>> sound-checkbox-validation
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
@@ -22,141 +9,15 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            filePath = "HeroApp/BleActor/HeroActor.m"
-            timestampString = "458234192.936757"
+            filePath = "HeroApp/Controls/WiFiSafeZoneViewController.m"
+            timestampString = "459281529.170405"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-writeData:forCharacteristicPath:"
-=======
-            filePath = "HeroApp/BleActor/ServerManager.m"
-            timestampString = "456346588.643085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "-peripheralManager:didReceiveWriteRequests:"
->>>>>>> cancel-phone-beep
-=======
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
->>>>>>> sound-checkbox-validation
-            filePath = "HeroApp/Controls/SettingViewController.m"
-            timestampString = "456287339.287537"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-<<<<<<< HEAD
-            landmarkName = "-HiroBeepAlert:"
-<<<<<<< HEAD
->>>>>>> fix-delete-without-btl
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
-            landmarkName = "-actionDelete:"
->>>>>>> sound-checkbox-validation
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            filePath = "HeroApp/BleActor/HeroActor.m"
-            timestampString = "458250665.747579"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-<<<<<<< HEAD
-            landmarkName = "-retrievePeripherals"
-=======
-            landmarkName = "-centralManager:willRestoreState:"
->>>>>>> ble
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HeroApp/BleActor/HeroActor.m"
-            timestampString = "458505259.554908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "-centralManagerDidUpdateState:"
-=======
-            filePath = "HeroApp/BleActor/ServerManager.m"
-            timestampString = "456348173.815939"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "-isOnPhoneCall"
->>>>>>> cancel-phone-beep
-=======
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
->>>>>>> sound-checkbox-validation
-            filePath = "HeroApp/Controls/SettingViewController.m"
-            timestampString = "456287339.287537"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-<<<<<<< HEAD
-            landmarkName = "-HiroBeepAlert:"
-<<<<<<< HEAD
->>>>>>> fix-delete-without-btl
-=======
-            filePath = "HeroApp/Controls/LocationViewController.m"
-            timestampString = "457470024.244033"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-zoomMapViewToFitAnnotations:animated:"
->>>>>>> fix-location
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
-            landmarkName = "-actionDelete:"
->>>>>>> sound-checkbox-validation
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-checkIfNetworkConnected"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> cancel-phone-beep-through-phone
-=======
->>>>>>> fix-delete-without-btl
-=======
->>>>>>> fix-location
-=======
->>>>>>> fix-narrow-wifi-screen
-=======
->>>>>>> sound-checkbox-validation
 </Bucket>
